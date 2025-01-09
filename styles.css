@@ -50,6 +50,11 @@ h2 {
 .navbar.scrolled {
     background-color: white;
 }
+@media (max-width: 767px) {
+    .navbar {
+        background-color: white !important;
+    }
+}
 /* Hero Section */
 #hero {
     display: flex;
