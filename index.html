@@ -11,42 +11,42 @@
     <script src="https://kit.fontawesome.com/8f26e5abfe.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="border-bottom: 2px solid black;">
-        <div class="container">
-            <a class="navbar-brand" href="#hero">Ariane Saulnier</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="frame">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#hero">
+                <i id="one" class="pl-3 fa-solid fa-circle-dot"></i>
+                <i id="two" class="pl-3 fa-solid fa-circle-dot"></i>
+                <i id="three" class="pl-3 fa-solid fa-circle-dot"></i>
+            </a>
+            <button class="navbar-toggler m-3" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="#hero">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#services">Services</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div id="hero" class="fade-in">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 align-content-center hero-content">
-                    <h1>Hi, I'm Ariane</h1>
-                    <p class="tagline mb-5">I help small businesses create beautiful, simple websites.</p>
-                    <a href="#contact" class="cta-btn">Let’s Build Your Website</a>
-                </div>
-                <div class="col-md-6">
-                    <div class="image-container">
-                        <img src="profile.jpg">
+        <div id="hero" class="fade-in">
+            <div class="container">
+                <div class="row">
+                    <div class="align-content-center">
+                        <h1>Make your website</h1>
+                        <h2>come true!</h2>
+                        <p class="tagline mb-5">I help small businesses create beautiful, simple websites on a budget.</p>
+                        <a href="#contact" class="cta-btn">Let’s Build Your Website</a>
                     </div>
                 </div>
             </div>
@@ -59,44 +59,6 @@
             <p>Hi, I’m Ariane! I help small business owners like you succeed online with simple, beautiful websites. I know the struggles of running a small business, so I’m here to make your life easier.</p>
         </div>
     </section>
-
-      <!-- Testimonial Carousel -->
-      <section id="Testimonial" class="fade-in">
-        <div class="container">
-            <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <blockquote class="blockquote">
-                    <p class="mb-0">"Ariane helped me build a beautiful website that brought in new clients. Highly recommend her services!"</p>
-                </blockquote>
-                <div class="author">Jane Doe, Small Business Owner</div>
-                </div>
-                <div class="carousel-item">
-                <blockquote class="blockquote">
-                    <p class="mb-0">"I needed a simple, elegant website, and Ariane delivered! Her work is top-notch!"</p>
-                </blockquote>
-                <div class="author">John Smith, Freelance Photographer</div>
-                </div>
-                <div class="carousel-item">
-                <blockquote class="blockquote">
-                    <p class="mb-0">"Fast, affordable, and professional. I couldn’t be happier with the result!"</p>
-                </blockquote>
-                <div class="author">Emily White, Yoga Instructor</div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-            </div>
-        </div>
-      </section>
 
     <section id="services" class="fade-in">
         <div class="container">
@@ -157,54 +119,120 @@
     <section id="portfolio" class="fade-in">
         <div class="container">
             <h2>Portfolio</h2>
+
             <div class="card mb-4">
                 <div class="card-body">
-                    <h3>Bakery Website</h3>
-                    <p>A simple, elegant site for a bakery with an embedded contact form and location map.</p>
-                    <a href="https://link-to-live-example.com" class="btn btn-primary">View Live</a>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>Freelancer Portfolio</h3>
+                            <p>A personal website showcasing the work and services of a freelance engineer/handyman.</p>
+                            <a href="https://aria-vero-s.github.io/handyman/" target="_blank" class="btn btn-primary">View Live Website</a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="image-container"><img src="mockup1.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="mt-5 container package-details">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <strong>Want something similar?</strong>
+                                <p>This <strong>Standard</strong> package includes:</p>
+                                <ul class="package-list">
+                                    <li>1-page website</li>
+                                    <li>Domain setup (ex.: www.your-business.com)</li>
+                                    <li>SEO Optimization</li>
+                                    <li>E-mail setup (optional)</li>
+                                    <li>Social Media (optional)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="price-info text-center">
+                                    <p><span class="price-range">60 € - 100 €</span></p>
+                                    <small>Prices vary based on customization and additional features.</small>
+                                    <br>
+                                    <a href="#contact" class="mt-4 btn btn-primary btn-lg">Get a Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
                 </div>
             </div>
 
             <div class="card mb-4">
                 <div class="card-body">
-                    <h3>Freelancer Portfolio</h3>
-                    <p>A personal website showcasing the work and services of a freelance photographer.</p>
-                    <a href="https://link-to-live-example.com" class="btn btn-primary">View Live</a>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>Booking System</h3>
+                            <p>A simple, elegant site for an at-home practioner with an embedded booking form.</p>
+                            <a href="https://aria-vero-s.github.io/craniosacral_therapy/" target="_blank" class="btn btn-primary">View Live Website</a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="image-container"><img src="mockup2.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="mt-5 container package-details">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <strong>Want something similar?</strong>
+                                <p>This <strong>Signature</strong> package includes:</p>
+                                <ul class="package-list">
+                                    <li>Everything in Standard</li>
+                                    <li>Multi-page website</li>
+                                    <li>logo & branding design</li>
+                                    <li>Booking System for small businesses</li>
+                                    <li>SEO Optimization</li>
+                                    <li>Social Media (optional)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="price-info text-center">
+                                    <p><span class="price-range">100 € - 200 €</span></p>
+                                    <small>Prices vary based on customization and additional features.</small>
+                                    <br>
+                                    <a href="#contact" class="mt-4 btn btn-primary btn-lg">Get a Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
                 </div>
             </div>
 
             <div class="card mb-4">
                 <div class="card-body">
-                    <h3>Hair Salon Website</h3>
-                    <p>A website for a local salon with a booking system and a photo gallery of the latest styles.</p>
-                    <a href="https://link-to-live-example.com" class="btn btn-primary">View Live</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="fade-in">
-        <div class="container">
-            <h2>Pricing</h2>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h3>Basic Package</h3>
-                    <p>1-page website, business email setup, and domain setup.</p>
-                    <p><strong>$100</strong></p>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h3>Standard Package</h3>
-                    <p>Multi-page website, logo design, and branding guide.</p>
-                    <p><strong>$200</strong></p>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h3>Premium Package</h3>
-                    <p>Everything in Standard + social media strategy and SEO basics.</p>
-                    <p><strong>$300</strong></p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2>Online Boutique</h2>
+                            <p>A website for a beauty shop with a payment system and a product management database.</p>
+                            <a href="https://glow-livid.vercel.app/" target="_blank" class="btn btn-primary">View Live Website</a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="image-container"><img src="mockup3.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="mt-5 container package-details">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <strong>Want something similar?</strong>
+                                <p>This package includes:</p>
+                                <ul class="package-list">
+                                    <li>Everything in Standard & Signature packages</li>
+                                    <li>Independent Product Database Management</li>
+                                    <li>Independent User Database Management</li>
+                                    <li>E-Commerce Payment System for Online Shopping</li>
+                                    <li>SEO Optimization</li>
+                                    <li>Social Media (optional)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="price-info text-center">
+                                    <p><span class="price-range">200 € - 300 €</span></p>
+                                    <small>Prices vary based on customization and additional features.</small>
+                                    <br>
+                                    <a href="#contact" class="mt-4 btn btn-primary btn-lg">Get a Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -276,6 +304,21 @@
                 });
             });
         });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const navbar = document.querySelector(".navbar");
+        const frame = document.querySelector(".frame");
+        const frameTopOffset = frame.offsetTop;
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY >= frameTopOffset) {
+                navbar.classList.add("fixed"); // Navbar sticks to the top
+            } else {
+                navbar.classList.remove("fixed"); // Navbar returns to the frame
+            }
+        });
+    });
     </script>            
 </body>
 </html>
