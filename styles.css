@@ -60,8 +60,10 @@ h2 {
     transition: all 0.3s ease !important;
 }
 .btn-primary:hover {
-    background-color: var(--rose) !important;
+    background-color: var(--sweet-orange) !important;
+    color: var(--night) !important;
     transform: all !important;
+    box-shadow: 0px 0px 20px 1px var(--sweet-orange);
 }
 .container {
     max-width: 1200px;
@@ -167,6 +169,10 @@ h2 {
     #navbarNav {
         margin-bottom:40px;
     }
+    .row .btn-primary
+    {
+        margin-bottom:40px;
+    }
 }
 /* Hero Section */
 #hero {
@@ -239,21 +245,6 @@ button:hover {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-}
-.cta-btn {
-    font-family: 'ashford';
-    padding: 15px 25px;
-    font-size: 1.4rem;
-    color: var(--lavender);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-.cta-btn:hover {
-    background-color: var(--grey);
-    transform: all;
-    text-decoration: none;
-    color: var(--night) !important;
 }
 /* portfolio */
 .image-container img {
