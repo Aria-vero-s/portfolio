@@ -1,7 +1,6 @@
 # Ariane Saulnier - Portfolio Website
 
-## Overview
-This is ny personal portfolio website, showcasing my skills and services. The website is aimed at helping small business owners build simple, budget-friendly websites. The design is responsive, modern, and includes a video background, animations, and interactive components.
+This is my personal portfolio website, showcasing my skills and services. The website is aimed at helping small business owners build simple, budget-friendly websites. The design is responsive, modern, and includes a video background, animations, and interactive components.
 
 ![mockup](mockup.png)
 
@@ -12,8 +11,10 @@ This is ny personal portfolio website, showcasing my skills and services. The we
 ### General
 - **Responsive Design**: Optimized for all screen sizes.
 - **Bootstrap Integration**: Ensures a clean, grid-based layout.
-- **Modern Design**: Video background and smooth animations enhance visual appeal.
-- **Font Awesome Icons**: For visually appealing and functional design elements.
+- **Fun Design**: Video background, web design and magic-inspired theme with smooth animations enhance visual appeal.
+- **Font Awesome Icons**: Icons from [FontAwesome](https://fontawesome.com/) for visually appealing and functional design elements.
+- **Translation**: Users can view the website in English or French through the `index-fr.html`.
+- **Currency converter**: Users can view prices in different currencies (EUR, CAD & GBP)
 
 ### Sections
 1. **Hero Section**:
@@ -40,7 +41,34 @@ This is ny personal portfolio website, showcasing my skills and services. The we
 - **Bootstrap 4 & 5**: Responsive grid system and components.
 - **JavaScript**: For interactivity (optional; to be integrated in future iterations).
 - **Font Awesome**: Icons for enhanced design.
-- **Video Background**: Adds a dynamic and engaging visual element.
+
+Sure! Here's an example section you can add to your README to highlight the price converter feature on your site:
+
+## Price Converter
+
+The price converter automatically updates the prices for three different packages:
+
+- **Standard**: €80 - €120
+- **Signature**: €120 - €240
+- **Business**: €240 - €300
+
+### How it works:
+- The converter uses hardcoded exchange rates:
+```
+document.addEventListener('DOMContentLoaded', () => {
+  const exchangeRates = {
+    "CAD": 1.45,
+    "GBP": 0.85
+  };
+```
+  
+- Users can select their preferred currency from the dropdown menu in the navbar. Once a currency is selected, the prices are converted and displayed in the chosen currency.
+
+- The prices are updated dynamically as users interact with the currency options.
+
+---
+
+Feel free to modify the content as needed, but this section should give a clear explanation of how the price converter works and how users can interact with it.
 
 ## How to Run the Project
 1. **Clone the Repository**:
