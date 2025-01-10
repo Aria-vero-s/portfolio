@@ -172,6 +172,7 @@
                                 <ul class="package-list">
                                     <li>1-page website</li>
                                     <li>Domain setup (ex.: www.your-business.com)</li>
+                                    <li>Logo & branding design</li>
                                     <li>SEO Optimization</li>
                                     <li>E-mail setup (optional)</li>
                                     <li>Social Media (optional)</li>
@@ -210,10 +211,8 @@
                                 <ul class="package-list">
                                     <li>Everything in Standard</li>
                                     <li>Multi-page website</li>
-                                    <li>logo & branding design</li>
                                     <li>Booking System for small businesses</li>
-                                    <li>SEO Optimization</li>
-                                    <li>Social Media (optional)</li>
+                                    <li>Interactive elements (ex.: subscription form) (optional)</li>
                                 </ul>
                             </div>
                             <div class="col-md-4">
@@ -236,6 +235,7 @@
                             <h2>Online Boutique</h2>
                             <p>A website for a beauty shop with a payment system and a product management database.</p>
                             <a href="https://glow-livid.vercel.app/" target="_blank" class="btn btn-primary">View Live Website</a>
+                            <br>
                             <small>(Coming Soon!)</small>
                         </div>
                         <div class="col-md-8">
@@ -252,8 +252,6 @@
                                     <li>Independent Product Database Management</li>
                                     <li>Independent User Database Management</li>
                                     <li>E-Commerce Payment System for Online Shopping</li>
-                                    <li>SEO Optimization</li>
-                                    <li>Social Media (optional)</li>
                                 </ul>
                             </div>
                             <div class="col-md-4">
@@ -271,20 +269,35 @@
         </div>
     </section>
 
+    <!-- Contact Form Section -->
     <section id="contact" class="fade-in">
         <div class="container">
-            <h2>Contact Me</h2>
-            <p>If you're ready to get started or have any questions, fill out the form below and I'll get back to you ASAP!</p>
-            <div class="contact-form">
-                <form action="#">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
+            <h2 class="text-center mb-5">Contact</h2>
+            <form id="contact-form" action="https://formspree.io/f/xrbbolzo" method="POST" onsubmit="return validateContactForm()">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone Number">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </form>
         </div>
-    </section>
+    </section>  
 
     <footer>
         <p>&copy; 2025 Ariane's Portfolio</p>
@@ -353,6 +366,19 @@
             }
         });
     });
+    </script>
+    <script>
+        function validateContactForm() {
+        // Check if either email or phone is provided
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+
+        if (!email && !phone) {
+            alert("Please provide at least one contact method: Email or Phone.");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }
     </script>            
 </body>
 </html>

@@ -32,7 +32,7 @@ This is ny personal portfolio website, showcasing my skills and services. The we
    - Includes pricing and package details for potential clients.
 
 5. **Contact Section**:
-   - Enables users to reach out for quotes or inquiries.
+   - Integrated contact form created with [formspree](http://www.formspree.io) enabling users to reach out for quotes or inquiries.
 
 ## Technologies Used
 - **HTML5**: Markup structure.
@@ -55,6 +55,21 @@ This is ny personal portfolio website, showcasing my skills and services. The we
 
 3. **Open in Browser**:
    Open the `index.html` file in your browser to view the website.
+
+### How to Set Up the Form
+
+1. Make sure to replace the Formspree action URL in the HTML form:
+    ```html
+    <form id="contact-form" action="https://formspree.io/f/xrbbolzo" method="POST">
+    ```
+    with:
+    ```html
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    ```
+
+2. Replace `YOUR_FORM_ID` with your actual Formspree form ID. You can obtain this ID by signing up at [Formspree](https://formspree.io/) and creating a new form.
+
+3. Once the change is made, the form will send submission data to your email.
 
 ## Project Structure
 ```
