@@ -20,6 +20,16 @@
     --grey: #e1e1e1;
     --night: #000000;
 }
+/* Universal focus removal */
+input:focus, 
+select:focus, 
+textarea:focus, 
+button:focus, 
+a:focus, 
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -388,7 +398,7 @@ footer {
     font-weight: bold;
 }
 
-.price-range {
+.price {
     font-size: 1.8rem;
     color: var(--lavender);
 }
@@ -396,3 +406,17 @@ footer {
 .text-center {
     text-align: center;
 }
+
+#currency {
+    width: auto;
+    display: inline-block;
+    background-color:transparent;
+    border:none;
+}
+
+#currencyDropdown .dropdown-menu .dropdown-item {
+    cursor: pointer;
+    font-weight: normal;
+    background-color: red;
+  }
+  

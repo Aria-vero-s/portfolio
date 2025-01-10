@@ -65,3 +65,51 @@ function validateContactForm() {
     }
     return true; // Allow form submission
 }
+
+    // Updating prices based on the selected currency
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Hardcoded exchange rates
+    const exchangeRates = {
+      "CAD": 1.45,
+      "GBP": 0.85
+    };
+
+    function updatePrices(currency) {
+      try {
+        const priceElements = document.querySelectorAll('.price');
+  
+        priceElements.forEach(priceElement => {
+          const minEuro = parseFloat(priceElement.getAttribute('data-min-euro'));
+          const maxEuro = parseFloat(priceElement.getAttribute('data-max-euro'));
+          
+          let minPrice = minEuro, maxPrice = maxEuro;
+  
+          if (currency === 'CAD') {
+            minPrice = (minEuro * exchangeRates.CAD).toFixed(2);
+            maxPrice = (maxEuro * exchangeRates.CAD).toFixed(2);
+          } else if (currency === 'GBP') {
+            minPrice = (minEuro * exchangeRates.GBP).toFixed(2);
+            maxPrice = (maxEuro * exchangeRates.GBP).toFixed(2);
+          }
+  
+          priceElement.textContent = 
+            currency === 'EUR' ? `€${minEuro} - €${maxEuro}` : 
+            currency === 'CAD' ? `C$${minPrice} - C$${maxPrice}` : 
+            `£${minPrice} - £${maxPrice}`;
+        });
+      } catch (error) {
+        console.error('Error updating prices:', error);
+      }
+    }
+
+    const currencyItems = document.querySelectorAll('.currency-item');
+    currencyItems.forEach(item => {
+      item.addEventListener('click', (event) => {
+        event.preventDefault();
+        const selectedCurrency = event.target.dataset.currency;
+        updatePrices(selectedCurrency);
+      });
+    });
+    updatePrices('EUR');
+});
