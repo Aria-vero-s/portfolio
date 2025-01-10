@@ -25,9 +25,9 @@ html {
 }
 body {
     background-color: var(--white);
-    font-family: 'Carlito' !important;
+    font-family: 'Montserrat' !important;
     color: var(--night) !important;
-    font-size: 1.4rem !important;
+    font-size: 1.2rem !important;
     margin:0;
     padding:0;
 }
@@ -99,7 +99,7 @@ h2 {
     background: white;
 }
 .navbar {
-    font-family: 'Carlito' !important;
+    font-family: 'Montserrat' !important;
     font-size: 1rem;
     background-color: white;
     transition: all 0.3s ease;
