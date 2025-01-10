@@ -61,7 +61,7 @@ h2 {
 }
 .btn-primary:hover {
     background-color: var(--sweet-orange) !important;
-    color: var(--night) !important;
+    color: var(--white) !important;
     transform: all !important;
     box-shadow: 0px 0px 20px 1px var(--sweet-orange);
 }

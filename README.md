@@ -76,6 +76,7 @@ This is ny personal portfolio website, showcasing my skills and services. The we
 |-- index.html
 |-- styles.css
 |-- animations.css
+|-- script.js
 |-- ashford-italic.otf
 |-- ashford.otf
 |-- background.mp4
