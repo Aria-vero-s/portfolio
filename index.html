@@ -76,6 +76,39 @@
     </div>
     </div>
 
+    <!-- Modal Window -->
+    <div class="modal fade" id="calculModal" tabindex="-1" aria-labelledby="calculModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="calculModalLabel">Price Calculation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>SMIC Wage Calculation:</strong></p>
+                    <ol>
+                        <li>
+                            <strong>Hourly Wage:</strong> <br>
+                            €1,801.80 ÷ 151.55 hours ≈ €11.88/hour
+                        </li>
+                        <li>
+                            <strong>Daily Wage:</strong> <br>
+                            €11.88/hour × 7 hours/day = €83.16/day
+                        </li>
+                    </ol>
+                    <p>
+                        Therefore, an employee earning the minimum wage would receive approximately <strong>€83.16 gross per day</strong>, working 7 hours per day.<br>
+                        This roughly corresponds to the total average hours it takes me to create a standard website.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div id="about" class="mb-5"><hr style="color:white;"></div>
 
     <section class="fade-in">
@@ -197,6 +230,7 @@
                                 <div class="price-info text-center">
                                     <p><span class="price-range">60€ - 100€</span></p>
                                     <small>Prices vary based on customization and additional features.</small>
+                                    <small><a href="#" class="link" data-bs-toggle="modal" data-bs-target="#calculModal">How are the prices calculated?</a></small>
                                     <br>
                                     <a href="#contact" class="mt-4 btn btn-primary btn-lg">Get a Quote</a>
                                 </div>
@@ -234,6 +268,7 @@
                                 <div class="price-info text-center">
                                     <p><span class="price-range">100€ - 200€</span></p>
                                     <small>Prices vary based on customization and additional features.</small>
+                                    <small><a href="#" class="link" data-bs-toggle="modal" data-bs-target="#calculModal">How are the prices calculated?</a></small>
                                     <br>
                                     <a href="#contact" class="mt-4 btn btn-primary btn-lg">Get a Quote</a>
                                 </div>
@@ -273,6 +308,7 @@
                                 <div class="price-info text-center">
                                     <p><span class="price-range">200€ - 300€</span></p>
                                     <small>Prices vary based on customization and additional features.</small>
+                                    <small><a href="#" class="link" data-bs-toggle="modal" data-bs-target="#calculModal">How are the prices calculated?</a></small>
                                     <br>
                                     <a href="#contact" class="mt-4 btn btn-primary btn-lg">Get a Quote</a>
                                 </div>
@@ -321,6 +357,7 @@
     <!-- Bootstrap JS & Dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>            
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>            
 </body>
 </html>

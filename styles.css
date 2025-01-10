@@ -41,6 +41,13 @@ a:hover {
     color: var(--grey) !important;
     transform: all !important;
 }
+.link {
+    color:var(--night) !important;
+    border-bottom:1px solid !important;
+}
+.link:hover {
+    color:var(--lavender) !important;
+}
 h1 {
     font-size: 5rem !important;
     font-family: 'ashford';

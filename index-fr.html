@@ -97,9 +97,9 @@
                             <strong>Expérience :</strong>
                             <ul>
                                 <li>Développeuse web UI/UX pour BeautifulCalf Productions</li>
-                                <li>Web designer freelance <a href="#portfolio" style="color:var(--night) !important;">(Voir portfolio)</a></li>
+                                <li>Web designer freelance <a href="#portfolio" class="link">(Voir portfolio)</a></li>
                             </ul>
-                            <a href="https://www.github.com/aria-vero-s" target="_blank" style="color:var(--night) !important; border-bottom:1px solid;">En savoir plus...</a>
+                            <a href="https://www.github.com/aria-vero-s" target="_blank" class="link">En savoir plus...</a>
                         </small>
                     </div>
                 </div>
@@ -195,8 +195,9 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="price-info text-center">
-                                    <p><span class="price-range">60€ - 100€</span></p>
+                                    <p><span class="price-range">80€ - 120€</span></p>
                                     <small>Prix variant en fonction des personnalisations.</small>
+                                    <small><a href="#" class="link" data-bs-toggle="modal" data-bs-target="#calculModal">Comment est calculé les prix ?</a></small>
                                     <br>
                                     <a href="#contact" class="mt-4 btn btn-primary btn-lg">Devis gratuit</a>
                                 </div>
@@ -232,8 +233,9 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="price-info text-center">
-                                    <p><span class="price-range">100€ - 200€</span></p>
+                                    <p><span class="price-range">120€ - 240€</span></p>
                                     <small>Prix variant en fonction des personnalisations.</small>
+                                    <small><a href="#" class="link" data-bs-toggle="modal" data-bs-target="#calculModal">Comment est calculé les prix ?</a></small>
                                     <br>
                                     <a href="#contact" class="mt-4 btn btn-primary btn-lg">Devis gratuit</a>
                                 </div>
@@ -271,8 +273,9 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="price-info text-center">
-                                    <p><span class="price-range">200€ - 300€</span></p>
+                                    <p><span class="price-range">240€ - 300€</span></p>
                                     <small>Prix variant en fonction des personnalisations.</small>
+                                    <small><a href="#" class="link" data-bs-toggle="modal" data-bs-target="#calculModal">Comment est calculé les prix ?</a></small>
                                     <br>
                                     <a href="#contact" class="mt-4 btn btn-primary btn-lg">Devis gratuit</a>
                                 </div>
@@ -283,6 +286,38 @@
             </div>
         </div>
     </section>
+
+        <!-- Fenêtre modale -->
+        <div class="modal fade" id="calculModal" tabindex="-1" aria-labelledby="calculModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="calculModalLabel">Calcul des prix</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p><strong>Calcul du salaire minimum:</strong></p>
+                  <ol>
+                    <li>
+                      <strong>Salaire horaire :</strong> <br>
+                      1 801,80 € ÷ 151,55 heures ≈ 11,88 €/heure
+                    </li>
+                    <li>
+                      <strong>Salaire quotidien :</strong> <br>
+                      11,88 €/heure × 7 heures/jour = 83,16 €/jour
+                    </li>
+                  </ol>
+                  <p>
+                    Donc, un salarié payé au SMIC toucherait environ <strong>83,16 € brut par jour</strong>, en travaillant 7 heures par jour.<br>Cela correspond, pour moi, au nombre d'heures total en moyenne nécessaires à la création d'un siteweb standard.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
             
     <!-- Section Formulaire de contact -->
     <section id="contact" class="fade-in">
@@ -321,7 +356,8 @@
     <!-- Bootstrap JS & Dépendances -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>            
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>            
    </body>
 </html>
     
