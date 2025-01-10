@@ -173,7 +173,66 @@ h2 {
     {
         margin-bottom:40px;
     }
+    .navbar .dropdown-menu, .dropdown-toggle{
+        background-color: var(--white) !important;
+        padding-left: 20px;
+        border: 0;
+        transform: transform 3.0s ease-in-out !important;
+        top: 40px;
+        right: 0;
+        left: auto;
+    }
+    .dropdown-toggle:hover{
+        box-shadow: 0 0 0 0 !important;
+    }
 }
+/* Styling for the language dropdown */
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown-toggle {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .dropdown-toggle:hover {
+    box-shadow: 0px 0px 0px 0px !important;
+}
+
+.navbar .dropdown-menu {
+    background-color: var(--sweet-orange);
+    border: 0px !important;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 150px;
+    margin-top : 5px;
+}
+
+.navbar .dropdown-menu a {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--night);
+    padding: 8px 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown-menu a:hover {
+    color: var(--white);
+    border-radius: 5px;
+}
+
+/* Adding a smooth transition for dropdown visibility */
+.navbar .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Hero Section */
 #hero {
     background-color: var(--white);
