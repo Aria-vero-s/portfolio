@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Fifties Movies';
+    src: url('./fonts/Fifties Movies.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Fifties Movies';
+    background-image: url('bg.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.row {
+    display: flex;
+    height: 100vh;
+    background: url('uni.png');
+    background-position: left top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.image-col {
+    flex: 1;
+}
+
+.text-col {
+    flex: 1;
+}
+
+.tagline {
+    text-align: right;
+    padding-right: clamp(0.5rem, 0.5vw, 20rem);
+    padding-top: clamp(4rem, 8vw, 10rem);
+    max-width: 100%;
+    z-index: 1;
+}
+
+@media screen and (max-width: 700px) {
+    .tagline {
+        padding-top: clamp(2rem, 4vw, 10rem);
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .tagline {
+        padding-right: clamp(2rem, 5vw, 30rem);
+    }
+}
+
+.tagline-title {
+    font-size: clamp(1rem, 7vw, 10rem);
+    margin-bottom: 1.5rem;
+    color: #df4646;
+    mix-blend-mode:color-burn;
+    line-height: 1.1;
+}
+
+@media screen and (max-width: 700px) {
+    .tagline-title {
+        padding-right: 0;
+    }
+}
+
+.bubble {
+    margin-right: clamp(1rem, 3.5vw, 20rem);
+}
+
+button {
+    font-family: 'Fifties Movies';
+    background: url('bubb.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    width: clamp(150px, 20vw, 367px);
+    height: clamp(100px, 12vw, 226px);
+    font-size: clamp(1rem, 2vw, 6rem);
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* .links {
+    display: flex;
+    background-color: white;
+    width: 80%;
+    align-items: stretch;
+} */
+
+.links {
+    display: flex;
+    flex:content;
+    align-items: stretch;
+    z-index: 1;
+    margin-top:1.5rem;
+}
+
+.links a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size:1.2rem;
+    flex: 1;
+    display: block;
+}
