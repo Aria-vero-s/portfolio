@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overlay Images</title>
+  <title>Superposition d'Images</title>
   <link rel="stylesheet" href="nav.css">
   <link rel="stylesheet" href="styles2.css">
 </head>
@@ -14,19 +14,19 @@
     <nav class="navbar">
       <button id="nav-toggle" class="nav-toggle"></button>
       <ul id="nav-links" class="nav-links">
-        <li><a class="nav-link" href="#">Home</a></li>
-        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#">Accueil</a></li>
+        <li><a class="nav-link" href="#about">À propos</a></li>
         <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
         <li><a class="nav-link" href="#contact">Contact</a></li>
         <li class="dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-dropdown>Language</a>
+          <a class="nav-link dropdown-toggle" href="#" data-dropdown>Langue</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="index2-fr.html">FR</a></li>
-            <li><a class="dropdown-item" href="index2.html">EN</a></li>
+            <li><a class="dropdown-item" href="index-fr.html">FR</a></li>
+            <li><a class="dropdown-item" href="index.html">EN</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-dropdown>Currency</a>
+          <a class="nav-link dropdown-toggle" href="#" data-dropdown>Devise</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#" data-currency="EUR">EUR (€)</a></li>
             <li><a class="dropdown-item" href="#" data-currency="CAD">CAD (C$)</a></li>
@@ -38,57 +38,54 @@
   </header>
   
   <section class="hero">
-    <img src="uni.png" alt="Landing image" class="hero-image">
+    <img src="uni.png" alt="Image d'accueil" class="hero-image">
     <div class="hero-content">
-      <h1 class="tagline-title">Not Tech Savvy?</h1>
-      <button class="bubble">No problem!</button>
+      <h1 class="tagline-title">Pas très tech ?</h1>
+      <button class="bubble">Aucun problème !</button>
     </div>
   </section>
   
-  
-  </div>
   <section>
     <div class="about">
-      <h1>Hi! I'm Ariane!</h1>
-      <p>I help small business owners succeed online with low-cost and unique websites. I know the struggles of running
-        a small business, so I’m here to make your life easier. Whether you already have a website that needs tweaking
-        or need a brand new one, I can help you from start to finish and whithin your budget.</p>
+      <h1>Salut ! Moi c'est Ariane !</h1>
+      <p>J'aide les propriétaires de petites entreprises à réussir en ligne grâce à des sites web uniques et abordables. 
+         Je connais les défis de la gestion d'une petite entreprise, donc je suis là pour vous faciliter la vie. 
+         Que vous ayez déjà un site à améliorer ou besoin d'un tout nouveau, je peux vous accompagner de A à Z, et dans votre budget.</p>
     </div>
   </section>
 
-<!-- Contact Form Section -->
+<!-- Section du formulaire de contact -->
 <section id="contact" class="fade-in">
   <div class="contact-container">
     <h2 class="contact-title">Contact</h2>
     <form id="contact-form" action="https://formspree.io/f/xrbbolzo" method="POST" onsubmit="return validateContactForm()">
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
       </div>
       
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email">
+        <input type="email" id="email" name="email" placeholder="Votre email">
       </div>
       
       <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone">
       </div>
       
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
       </div>
       
-      <button type="submit" class="contact-button">Send Message</button>
+      <button type="submit" class="contact-button">Envoyer le message</button>
     </form>
   </div>
 </section>
 
-
   <footer>
-    @ 2025
+    © 2025
   </footer>
   <script src="script2.js"></script>
 </body>

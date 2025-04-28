@@ -5,6 +5,23 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Holy Macaroni';
+    src: url('./fonts/HolyMacaroni.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+a:focus,
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,102 +31,163 @@
 html,
 body {
     height: 100%;
-    font-family: 'Fifties Movies';
     background-image: url('bg.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Holy Macaroni';
 }
 
-.row {
-    display: flex;
-    height: 100vh;
-    background: url('uni.png');
-    background-position: left top;
-    background-size: contain;
-    background-repeat: no-repeat;
+h1,
+h2 {
+    font-family: 'Fifties Movies';
 }
 
-.image-col {
-    flex: 1;
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
-.text-col {
-    flex: 1;
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width:85vw;
+}
+
+.hero-content {
+    position: absolute;
+    top: clamp(4rem, 10vw, 20rem);
+    right: 5%;
+    max-width: clamp(20rem, 40vw, 60rem);
+    text-align: right;
 }
 
 .tagline {
     text-align: right;
-    padding-right: clamp(0.5rem, 0.5vw, 20rem);
-    padding-top: clamp(4rem, 8vw, 10rem);
-    max-width: 100%;
     z-index: 1;
-}
-
-@media screen and (max-width: 700px) {
-    .tagline {
-        padding-top: clamp(2rem, 4vw, 10rem);
-    }
-}
-
-@media screen and (min-width: 1500px) {
-    .tagline {
-        padding-right: clamp(2rem, 5vw, 30rem);
-    }
 }
 
 .tagline-title {
-    font-size: clamp(1rem, 7vw, 10rem);
-    margin-bottom: 1.5rem;
+    font-family: 'Fifties Movies', sans-serif;
+    mix-blend-mode: color-burn;
+    font-size: clamp(2rem, 7vw, 8rem);
     color: #df4646;
-    mix-blend-mode:color-burn;
-    line-height: 1.1;
-}
-
-@media screen and (max-width: 700px) {
-    .tagline-title {
-        padding-right: 0;
-    }
+    margin-bottom: 1rem;
 }
 
 .bubble {
-    margin-right: clamp(1rem, 3.5vw, 20rem);
-}
-
-button {
-    font-family: 'Fifties Movies';
-    background: url('bubb.png') no-repeat center center;
-    background-size: contain;
+    text-decoration: none;
+    color: black;
+    font-family: 'Fifties Movies', sans-serif;
+    background: url('bubb.png') no-repeat center/contain;
     border: none;
-    width: clamp(150px, 20vw, 367px);
-    height: clamp(100px, 12vw, 226px);
-    font-size: clamp(1rem, 2vw, 6rem);
-    color: #000;
-    text-align: center;
+    width: clamp(150px, 50vw, 367px);
+    height: clamp(120px, 12vw, 226px);
+    padding: 1rem 2rem;
+    font-size: clamp(1rem, 3vw, 4rem);
     cursor: pointer;
 }
 
-/* .links {
-    display: flex;
-    background-color: white;
-    width: 80%;
-    align-items: stretch;
-} */
+@media (max-width: 768px) {
+    .hero-content {
+        top: clamp(4rem, 10vw, 20rem);
+        right: clamp(2rem, 7vw, 5rem);
+        max-width: clamp(15rem, 20vw, 20rem);
+    }
 
-.links {
-    display: flex;
-    flex:content;
-    align-items: stretch;
-    z-index: 1;
-    margin-top:1.5rem;
+    .tagline-title {
+        font-size: clamp(2rem, 7vw, 5rem);
+        margin-bottom: 0rem;
+    }
+    
+    .bubble {
+        width: clamp(150px, 20vw, 367px);
+        height: clamp(100px, 12vw, 226px);
+        font-size: clamp(1rem, 2vw, 3rem);
+    }
 }
 
-.links a {
-    color: black;
-    text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
+/* Contact Section Styles */
+#contact {
+    padding: 4rem 2rem;
+  }
+  
+  .contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 0px;
+  }
+  
+  .contact-title {
+    font-family: 'Fifties Movies', sans-serif;
     text-align: center;
-    font-size:1.2rem;
-    flex: 1;
-    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #df4646;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  input, textarea {
+    background: transparent;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #df4646;
+    outline: none;
+  }
+  
+  .contact-button {
+    align-self: center;
+    background-color: #df4646;
+    color: white;
+    font-family: 'Fifties Movies', sans-serif;
+    background: url('orange-bub.png') no-repeat center/contain;
+    width: clamp(100px, 50vw, 367px);
+    height: clamp(100px, 12vw, 226px);
+    font-size: clamp(1rem, 2vw, 3rem);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .contact-button:hover {
+    color: black;
+  }  
+
+/* footer */
+footer {
+    min-height:140px;
+    background-color: var(--night) !important;
+    color: var(--white) !important;
+    text-align: center;
+    padding: 20px;
 }
