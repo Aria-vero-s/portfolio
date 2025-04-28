@@ -84,10 +84,10 @@ h2 {
     font-family: 'Fifties Movies', sans-serif;
     background: url('bubb.png') no-repeat center/contain;
     border: none;
-    width: clamp(150px, 50vw, 367px);
-    height: clamp(120px, 12vw, 226px);
+    width: clamp(300px, 40vw, 600px);
+    height: clamp(200px, 15vw, 450px);
     padding: 1rem 2rem;
-    font-size: clamp(1rem, 3vw, 4rem);
+    font-size: clamp(1rem, 3vw, 6rem);
     cursor: pointer;
 }
 
@@ -104,9 +104,9 @@ h2 {
     }
     
     .bubble {
-        width: clamp(150px, 20vw, 367px);
+        width: clamp(200px, 30vw, 367px);
         height: clamp(100px, 12vw, 226px);
-        font-size: clamp(1rem, 2vw, 3rem);
+        font-size: clamp(1rem, 2.5vw, 3rem);
     }
 }
 
