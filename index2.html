@@ -56,6 +56,133 @@
     </div>
   </section>
 
+  <div class="slider-wrapper">
+    <img src="arrow-l.png" class="arrow" id="arrow-left" alt="Previous" />
+    <div class="slider-container">
+      <div class="slider-track" id="slider-track">
+        <!-- Repeat 5 cards -->
+        <div class="card">
+          <img src="img1.png" alt="Thumbnail 1" />
+          <div class="card-content">
+            <h3>Get_next_line</h3>
+            <p>School project submission for 42. C coding program to display content of file.</p>
+            <div class="buttons">
+              <button>GitHub</button>
+              <button>Video</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img2.png" alt="Thumbnail 2" />
+          <div class="card-content">
+            <h3>Pianist portfolio</h3>
+            <p>Website description for card 2.</p>
+            <div class="buttons">
+              <button>Channel link</button>
+              <button>Video playlist</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img3.png" alt="Thumbnail 3" />
+          <div class="card-content">
+            <h3>E-commerce application</h3>
+            <p>Glow is a fictional hair & beauty salon with their own line of products.</p>
+            <div class="buttons">
+              <button>GitHub</button>
+              <button>Live demo</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img4.png" alt="Thumbnail 4" />
+          <div class="card-content">
+            <h3>Handyman services</h3>
+            <p>Website description for card 4.</p>
+            <div class="buttons">
+              <button>Action</button>
+              <button>More</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img5.png" alt="Thumbnail 5" />
+          <div class="card-content">
+            <h3>So_long</h3>
+            <p>C coding project submission for 42. 2D game where player is a bunny collecting treasure chests to unlock the exit of a maze.</p>
+            <div class="buttons">
+              <button>Action</button>
+              <button>More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="arrow-r.png" class="arrow" id="arrow-right" alt="Next" />
+  </div>
+
+
+<section id="cv-section">
+  <div class="cv-header">
+      <div class="cv-header-left">
+          <h1>Your Name</h1>
+          <h2>Job Title / Role</h2>
+      </div>
+      <button id="contact-btn">Contact</button>
+    </div>
+  <div class="timeline">
+      <!-- Timeline items -->
+      <div class="timeline-item">
+          <div class="timeline-date">2021 - Present</div>
+          <div class="timeline-card">
+              <div class="card-text">
+                  <h3>Skill Title 1</h3>
+                  <p>Short description of skill or achievement goes here.</p>
+              </div>
+              <div class="icon-wrapper">
+                  <img src="icon1.png" alt="Icon 1">
+              </div>
+          </div>
+      </div>
+      <div class="timeline-item">
+          <div class="timeline-date">2019 - 2021</div>
+          <div class="timeline-card">
+              <div class="card-text">
+                  <h3>Skill Title 2</h3>
+                  <p>Short description of skill or achievement goes here.</p>
+              </div>
+              <div class="icon-wrapper">
+                  <img src="icon2.png" alt="Icon 2">
+              </div>
+          </div>
+      </div>
+      <div class="timeline-item">
+          <div class="timeline-date">2017 - 2019</div>
+          <div class="timeline-card">
+              <div class="card-text">
+                  <h3>Skill Title 3</h3>
+                  <p>Short description of skill or achievement goes here.</p>
+              </div>
+              <div class="icon-wrapper">
+                  <img src="icon3.png" alt="Icon 3">
+              </div>
+          </div>
+      </div>
+      <div class="timeline-item">
+          <div class="timeline-date">2015 - 2017</div>
+          <div class="timeline-card">
+              <div class="card-text">
+                  <h3>Skill Title 4</h3>
+                  <p>Short description of skill or achievement goes here.</p>
+              </div>
+              <div class="icon-wrapper">
+                  <img src="icon4.png" alt="Icon 4">
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
 <!-- Contact Form Section -->
 <section id="contact" class="fade-in">
   <div class="contact-container">
@@ -86,11 +213,50 @@
   </div>
 </section>
 
-
   <footer>
     @ 2025
   </footer>
   <script src="script2.js"></script>
+  <script>
+    const track = document.getElementById('slider-track');
+    const cards = Array.from(track.children);
+    const prev = document.getElementById('arrow-left');
+    const next = document.getElementById('arrow-right');
+    let index = 0;
+    let cardWidth = 0;
+    let maxIndex = 0;
+
+    function calculateWidths() {
+      const style = getComputedStyle(cards[0]);
+      const margin = parseFloat(style.marginRight);
+      cardWidth = cards[0].getBoundingClientRect().width + margin;
+
+      const visible = document.querySelector('.slider-container').offsetWidth;
+      const total = cardWidth * cards.length;
+      maxIndex = Math.ceil((total - visible) / cardWidth);
+    }
+
+    function update() {
+      track.style.transform = `translateX(${-index * cardWidth}px)`;
+      prev.style.visibility = index === 0 ? 'hidden' : 'visible';
+      next.style.visibility = index >= maxIndex ? 'hidden' : 'visible';
+    }
+
+    prev.addEventListener('click', () => {
+      if (index > 0) index--;
+      update();
+    });
+    next.addEventListener('click', () => {
+      if (index < maxIndex) index++;
+      update();
+    });
+    window.addEventListener('resize', () => {
+      calculateWidths();
+      update();
+    });
+    calculateWidths();
+    update();
+  </script>
 </body>
 
 </html>

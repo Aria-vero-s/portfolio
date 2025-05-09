@@ -28,15 +28,26 @@ a:focus,
     padding: 0
 }
 
-html,
 body {
-    height: 100%;
-    background-image: url('bg.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Holy Macaroni';
+  position: relative;
+  min-height: 100%;
+  background-color: white;
+  font-family: 'Holy Macaroni';
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.6;
+  z-index: -1; /* keeps it behind all content */
+}
+
 
 h1,
 h2 {
@@ -108,6 +119,16 @@ h2 {
         height: clamp(100px, 12vw, 226px);
         font-size: clamp(1rem, 2.5vw, 3rem);
     }
+}
+
+.about {
+  padding-left:5rem;
+  padding-right:5rem;
+  text-align: justify;
+}
+
+.about h1 {
+  text-align: right;
 }
 
 /* Contact Section Styles */
@@ -191,3 +212,243 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+/* slider */
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 40px; /* space for arrows */
+  box-sizing: border-box;
+  margin: 40px auto;
+}
+/* Shift on desktop */
+@media (min-width: 1024px) {
+  .slider-wrapper {
+    margin-left: 5vw;
+    padding: 0 10vw; /* space for arrows */
+  }
+}
+
+/* The container just masks track overflow */
+.slider-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.card {
+  flex: 0 0 40%;             /* Show 2 full + partial third */
+  margin-right: 16px;
+  padding: 18px 26px;
+  background: url('frame.png') no-repeat center/100% 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card:last-child { margin-right: 0; }
+
+.card img {
+  width: 100%;
+  display: block;
+  flex: 1;
+  object-fit: cover;
+}
+.card-content {
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-content h3 { margin: 0 0 8px; font-size: 1.1em; }
+.card-content p { flex: 1; font-size: 0.9em; margin: 0 0 12px; }
+.buttons { display: flex; gap: 8px; }
+.buttons button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.buttons button:hover { background-color: #ddd; }
+
+.arrow {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+  .card { flex: 0 0 60%; margin-right: 12px; }
+  .arrow { width: 32px; height: 32px; padding: 0 10px; }
+}
+@media (max-width: 480px) {
+  .card { flex: 0 0 80%; margin-right: 8px; }
+  .arrow { width: 28px; height: 28px; padding: 0 8px; }
+}
+
+        /* Variables */
+        :root {
+          --primary-color: #007BFF;
+          --text-color: #333;
+          --subtext-color: #555;
+          --bg-card: #fff;
+          --border-radius: 8px;
+          --gap-small: 16px;
+      }
+
+      /* Container */
+      #cv-section {
+          padding: 2rem;
+          max-width: 1200px;
+          margin: 0 auto;
+          height:100vh;
+          align-content: center;
+      }
+
+      /* Header */
+      .cv-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 2rem;
+      }
+
+      .cv-header-left h1 {
+          margin: 0;
+          font-size: 2rem;
+      }
+
+      .cv-header-left h2 {
+          margin: 0;
+          font-size: 1.25rem;
+          color: var(--subtext-color);
+      }
+
+      #contact-btn {
+        align-self: center;
+        background-color: #df4646;
+        color: white;
+        font-family: 'Fifties Movies', sans-serif;
+        background: url('orange-bub.png') no-repeat center/contain;
+        width: clamp(100px, 50vw, 367px);
+        height: clamp(100px, 12vw, 226px);
+        font-size: clamp(1rem, 2vw, 3rem);
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      #contact-btn:hover {
+        color: black;
+      }
+
+      /* Timeline grid */
+      .timeline {
+          align-items: center;
+          display: grid;
+          grid-template-columns: auto 1fr;
+          /* no row-gap so cards touch */
+      }
+
+      .timeline-item {
+          display: contents;
+      }
+
+      /* Date boxes: spaced by margin */
+      .timeline-date {
+          background-image: url('bg.png');
+          padding: 0.75rem 1rem;
+          margin: var(--gap-small) 0;
+          border-radius: var(--border-radius);
+          border: 1px solid var(--text-color);
+          font-size: 0.9rem;
+          font-weight: bold;
+          align-content: center;
+          white-space: nowrap;
+          position: relative;
+          z-index: 1;
+          width: 120%;
+          transform: translateX(20px);
+          height:40%;
+      }
+
+      /* Cards: no vertical gap, stacked touching */
+      .timeline-card {
+          background: none;
+          padding: 1rem 4rem 1rem 4rem;
+          border-radius: none;
+          display: flex;
+          justify-content:space-between;
+          align-items: center;
+          border: 1px solid var(--text-color);
+          position: relative;
+          z-index: 0;
+      }
+
+      /* Remove double borders by modifying top and bottom borders */
+      .timeline-item:first-of-type .timeline-card {
+          border-top: 1px solid var(--text-color);
+          /* Keep top border only on first card */
+      }
+
+      .timeline-item .timeline-card {
+          border-left: 4px solid var(--text-color);
+          /* Keep bottom border only on last card */
+      }
+
+      /* Ensure borders don't appear between cards in the middle */
+      .timeline-item:not(:first-of-type) .timeline-card {
+          border-top: 1px solid var(--text-color);
+      }
+
+      .timeline-item:not(:last-of-type) .timeline-card {
+          border-bottom: none;
+      }
+
+      .card-text h3 {
+          margin: 0 0 0.5rem;
+          font-size: 1.25rem;
+      }
+
+      .card-text p {
+          margin: 0;
+          font-size: 1rem;
+          color: var(--subtext-color);
+      }
+
+      .icon-wrapper img {
+          width: 6rem;
+          height: 6rem;
+          border-radius: 50%;
+          object-fit: cover;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+          .timeline-card {
+              padding: 2rem 2rem 2rem 4rem;
+              /* Keep bottom border only on last card */
+          }
+
+          .timeline-date {
+          height:30%;
+      }
+
+          #cv-section {
+              padding: 1rem;
+          }
+
+          .icon-wrapper img {
+              width: 4rem;
+              height: 4rem;
+          }
+      }

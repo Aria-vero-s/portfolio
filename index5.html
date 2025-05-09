@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Section</title>
+    <style>
+        /* Variables */
+        :root {
+            --primary-color: #007BFF;
+            --text-color: #333;
+            --subtext-color: #555;
+            --bg-card: #fff;
+            --border-radius: 8px;
+            --gap-small: 16px;
+        }
+
+        /* Container */
+        #cv-section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .cv-header-left h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .cv-header-left h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: var(--subtext-color);
+        }
+
+        #contact-btn {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: var(--primary-color);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Timeline grid */
+        .timeline {
+            align-items: center;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            /* no row-gap so cards touch */
+        }
+
+        .timeline-item {
+            display: contents;
+        }
+
+        /* Date boxes: spaced by margin */
+        .timeline-date {
+            background-color: white;
+            padding: 0.75rem 1rem;
+            margin: var(--gap-small) 0;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--text-color);
+            font-size: 0.9rem;
+            font-weight: bold;
+            align-content: center;
+            white-space: nowrap;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height:40%;
+        }
+
+        /* Cards: no vertical gap, stacked touching */
+        .timeline-card {
+            background: var(--bg-card);
+            padding: 1rem 4rem 1rem 4rem;
+            border-radius: none;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            border: 1px solid var(--text-color);
+            position: relative;
+            z-index: 0;
+        }
+
+        /* Remove double borders by modifying top and bottom borders */
+        .timeline-item:first-of-type .timeline-card {
+            border-top: 1px solid var(--text-color);
+            /* Keep top border only on first card */
+        }
+
+        .timeline-item .timeline-card {
+            border-left: 4px solid var(--text-color);
+            /* Keep bottom border only on last card */
+        }
+
+        /* Ensure borders don't appear between cards in the middle */
+        .timeline-item:not(:first-of-type) .timeline-card {
+            border-top: 1px solid var(--text-color);
+        }
+
+        .timeline-item:not(:last-of-type) .timeline-card {
+            border-bottom: none;
+        }
+
+        .card-text h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .card-text p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--subtext-color);
+        }
+
+        .icon-wrapper img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline-card {
+                padding: 2rem 2rem 2rem 4rem;
+                /* Keep bottom border only on last card */
+            }
+
+            .timeline-date {
+            height:20%;
+        }
+
+            #cv-section {
+                padding: 0rem;
+            }
+
+            .icon-wrapper img {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cv-section">
+        <header class="cv-header">
+            <div class="cv-header-left">
+                <h1>Your Name</h1>
+                <h2>Job Title / Role</h2>
+            </div>
+            <button id="contact-btn">Contact</button>
+        </header>
+        <div class="timeline">
+            <!-- Timeline items -->
+            <div class="timeline-item">
+                <div class="timeline-date">2021 - Present</div>
+                <div class="timeline-card">
+                    <div class="card-text">
+                        <h3>Skill Title 1</h3>
+                        <p>Short description of skill or achievement goes here.</p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <img src="icon1.png" alt="Icon 1">
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2019 - 2021</div>
+                <div class="timeline-card">
+                    <div class="card-text">
+                        <h3>Skill Title 2</h3>
+                        <p>Short description of skill or achievement goes here.</p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <img src="icon2.png" alt="Icon 2">
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2017 - 2019</div>
+                <div class="timeline-card">
+                    <div class="card-text">
+                        <h3>Skill Title 3</h3>
+                        <p>Short description of skill or achievement goes here.</p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <img src="icon3.png" alt="Icon 3">
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2015 - 2017</div>
+                <div class="timeline-card">
+                    <div class="card-text">
+                        <h3>Skill Title 4</h3>
+                        <p>Short description of skill or achievement goes here.</p>
+                    </div>
+                    <div class="icon-wrapper">
+                        <img src="icon4.png" alt="Icon 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contact-btn').addEventListener('click', function () {
+            const target = document.getElementById('contact-section');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+
+</html>

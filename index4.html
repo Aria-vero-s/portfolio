@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Thumbnail Slider</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+
+    /* Wrapper holds arrows and slider */
+    .slider-wrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+      padding: 0 40px; /* space for arrows */
+      box-sizing: border-box;
+      margin: 40px auto;
+    }
+    /* Shift on desktop */
+    @media (min-width: 1024px) {
+      .slider-wrapper {
+        margin-left: 5vw;
+        padding: 0 10vw; /* space for arrows */
+      }
+    }
+
+    /* The container just masks track overflow */
+    .slider-container {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .card {
+      flex: 0 0 40%;             /* Show 2 full + partial third */
+      margin-right: 16px;
+      padding: 18px 26px;
+      background: url('frame.png') no-repeat center/100% 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:last-child { margin-right: 0; }
+
+    .card img {
+      width: 100%;
+      display: block;
+      flex: 1;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-content h3 { margin: 0 0 8px; font-size: 1.1em; }
+    .card-content p { flex: 1; font-size: 0.9em; margin: 0 0 12px; }
+    .buttons { display: flex; gap: 8px; }
+    .buttons button {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9em;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .buttons button:hover { background-color: #ddd; }
+
+    .arrow {
+      flex: 0 0 auto;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    @media (max-width: 768px) {
+      .card { flex: 0 0 60%; margin-right: 12px; }
+      .arrow { width: 32px; height: 32px; padding: 0 10px; }
+    }
+    @media (max-width: 480px) {
+      .card { flex: 0 0 80%; margin-right: 8px; }
+      .arrow { width: 28px; height: 28px; padding: 0 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-wrapper">
+    <img src="arrow-l.png" class="arrow" id="arrow-left" alt="Previous" />
+    <div class="slider-container">
+      <div class="slider-track" id="slider-track">
+        <!-- Repeat 5 cards -->
+        <div class="card">
+          <img src="img1.png" alt="Thumbnail 1" />
+          <div class="card-content">
+            <h3>Title 1</h3>
+            <p>Short description for card 1.</p>
+            <div class="buttons">
+              <button>Action</button>
+              <button>More</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img2.png" alt="Thumbnail 2" />
+          <div class="card-content">
+            <h3>Title 2</h3>
+            <p>Short description for card 2.</p>
+            <div class="buttons">
+              <button>Action</button>
+              <button>More</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img3.png" alt="Thumbnail 3" />
+          <div class="card-content">
+            <h3>Title 3</h3>
+            <p>Short description for card 3.</p>
+            <div class="buttons">
+              <button>Action</button>
+              <button>More</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img4.png" alt="Thumbnail 4" />
+          <div class="card-content">
+            <h3>Title 4</h3>
+            <p>Short description for card 4.</p>
+            <div class="buttons">
+              <button>Action</button>
+              <button>More</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img5.png" alt="Thumbnail 5" />
+          <div class="card-content">
+            <h3>Title 5</h3>
+            <p>Short description for card 5.</p>
+            <div class="buttons">
+              <button>Action</button>
+              <button>More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="arrow-r.png" class="arrow" id="arrow-right" alt="Next" />
+  </div>
+
+  <script>
+    const track = document.getElementById('slider-track');
+    const cards = Array.from(track.children);
+    const prev = document.getElementById('arrow-left');
+    const next = document.getElementById('arrow-right');
+    let index = 0;
+    let cardWidth = 0;
+    let maxIndex = 0;
+
+    function calculateWidths() {
+      const style = getComputedStyle(cards[0]);
+      const margin = parseFloat(style.marginRight);
+      cardWidth = cards[0].getBoundingClientRect().width + margin;
+
+      const visible = document.querySelector('.slider-container').offsetWidth;
+      const total = cardWidth * cards.length;
+      maxIndex = Math.ceil((total - visible) / cardWidth);
+    }
+
+    function update() {
+      track.style.transform = `translateX(${-index * cardWidth}px)`;
+      prev.style.visibility = index === 0 ? 'hidden' : 'visible';
+      next.style.visibility = index >= maxIndex ? 'hidden' : 'visible';
+    }
+
+    prev.addEventListener('click', () => {
+      if (index > 0) index--;
+      update();
+    });
+    next.addEventListener('click', () => {
+      if (index < maxIndex) index++;
+      update();
+    });
+    window.addEventListener('resize', () => {
+      calculateWidths();
+      update();
+    });
+    calculateWidths();
+    update();
+  </script>
+</body>
+</html>
