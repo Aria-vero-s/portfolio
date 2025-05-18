@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Creative Manifesto - Retro Comic Style</title>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans&family=Spectral&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="styles6.css">
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<div class="cursor"></div>
+	<!-- Transition Overlay -->
+	<div id="overlay" class="transition-overlay"></div>
+
+	<!-- Table of Contents (TOC) Button -->
+	<div id="tocButton" class="toc-button cursor-red">☰</div>
+	<div id="tocPanel" class="toc-panel">
+		<div class="toc-item cursor-red" data-target="0">Home</div>
+		<div class="toc-item cursor-red" data-target="1">About</div>
+		<div class="toc-item cursor-red" data-target="2">Portfolio</div>
+		<div class="toc-item cursor-red" data-target="3">Contact</div>
+	</div>
+
+	<!-- HERO Section -->
+	<section id="section-0" class="hero active" data-index="0">
+		<div class="block top" data-target="1">
+			<div class="overlay">
+				<h1>Not tech savvy?</h1>
+				<h2>No problem!</h2>
+			</div>
+		</div>
+		<div class="block item1" data-target="1">
+			<div class="overlay">
+				<h2 class="cursor-red">About</h2>
+			</div>
+		</div>
+		<div class="block item2" data-target="2">
+			<div class="overlay">
+				<h2 class="cursor-red">Portfolio</h2>
+			</div>
+		</div>
+		<div class="block item3" data-target="3">
+			<div class="overlay">
+				<h2 class="cursor-red">Contact</h2>
+			</div>
+		</div>
+	</section>
+
+	<!-- ABOUT Section-->
+
+	<section id="section-1" data-index="1">
+		<div class="timeline-container">
+			<div class="sidebar">
+				<h2>About</h2>
+				<div class="resume">
+					<h3>Coding languages</h3>
+					<ul class="list">
+						<li>HTML/CSS</li>
+						<li>JavaScript</li>
+						<li>Python</li>
+						<li>C / C++</li>
+						<li>React</li>
+					</ul>
+					<h3>Design skills</h3>
+					<ul class="list">
+						<li>Photoshop</li>
+						<li>ProCreate</li>
+						<li>Photography</li>
+					</ul>
+					<h3>Design skills</h3>
+					<ul class="list">
+						<li>Video: DaVinci Resolve</li>
+						<li>Audio: Logic Pro</li>
+					</ul>
+					<h3>Languages</h3>
+					<ul class="list">
+						<li>English</li>
+						<li>French</li>
+						<li>Italian (Basic)</li>
+					</ul>
+				</div>
+			</div>
+			<div class="timeline">
+				<div class="timeline-line"></div>
+				<div class="events">
+					<div class="event">
+						<div class="stamp">🇨🇦</div>
+						<div class="content">
+							<h3>Canada<br><span class="dates">(1995–2021)</span></h3>
+							<p>Grew up immersed in music & community, studied performance & education while building
+								websites as a hobby.</p>
+						</div>
+					</div>
+					<div class="event">
+						<div class="stamp">🇬🇧</div>
+						<div class="content">
+							<h3>London, UK<br><span class="dates">(2021–2024)</span></h3>
+							<p>Taught music for three years while diving into code & design at Code Institute.</p>
+						</div>
+					</div>
+					<div class="event">
+						<div class="stamp">🇫🇷</div>
+						<div class="content">
+							<h3>Paris, FR<br><span class="dates">(2024–Present)</span></h3>
+							<p>Studying at École 42 and working as a web developer at BeautifulCalf Productions.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- PORTFOLIO Section -->
+	<section id="section-2" data-index="2">
+		<div class="portfolio-grid">
+			<h2>Portfolio</h2>
+
+			<div class="project-card project-1" data-key="project1">
+				<div class="project-label">Game project</div>
+			</div>
+			<div class="project-card project-2" data-key="project2">
+				<div class="project-label">E‑commerce</div>
+			</div>
+			<div class="project-card project-3" data-key="project3">
+				<div class="project-label">C Project</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Modal Popup -->
+	<div class="modal" id="projectModal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 id="modalTitle">Project</h2>
+				<button class="close-btn" id="modalClose">✕</button>
+			</div>
+			<div class="modal-body" id="modalBody">
+				<img src="" alt="Project Image" id="modalImage">
+				<p id="modalDesc">Project description goes here.</p>
+			</div>
+		</div>
+	</div>
+	</section>
+
+	<!-- CONTACT Section -->
+	<section id="section-3" data-index="3">
+		<h2>Get in touch</h2>
+		<div class="cards-container">
+			<div class="contact-card" data-type="email">
+				<div class="icon">✉️</div>
+				<div class="label">Email</div>
+				<div class="card-details">
+					<p>ariane.saulnier</p>
+					<a href="mailto:ariane.saulnier">Send Email</a>
+				</div>
+			</div>
+			<div class="contact-card" data-type="phone">
+				<div class="icon">📞</div>
+				<div class="label">LinkedIn</div>
+				<div class="card-details">
+					<p>in/ariane-saulnier/</p>
+					<a href="https://www.linkedin.com/in/ariane-saulnier/">Call Now</a>
+				</div>
+			</div>
+			<div class="contact-card" data-type="social">
+				<div class="icon">💬</div>
+				<div class="label">GitHub</div>
+				<div class="card-details">
+					<p>@aria-vero-s</p>
+					<a href="https:/github.com/aria-vero-s" target="_blank">Visit Profile</a>
+				</div>
+			</div>
+			<div class="contact-card" data-type="location">
+				<div class="icon">📍</div>
+				<div class="label">Location</div>
+				<div class="card-details">
+					<p>Paris, France</p>
+					<a href="https://goo.gl/maps/example" target="_blank">View Map</a>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p>&copy; 2025 Ariane Saulnier - Portfolio</p>
+		</footer>
+	</section>
+
+	<script src="script3.js"></script>
+</body>
+
+</html>
